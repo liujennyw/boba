@@ -1,0 +1,67 @@
+:root {
+	--button: #ff5b44;
+	--buttonpress: #e64433;
+	--bobabackground: #ffdeda;
+}
+
+body {
+	overflow: hidden;
+}
+
+#page-header {
+	height:40px;
+	padding-top: 8px;
+	font-weight: 600;
+	background-color: var(--button);
+	color: white;
+}
+
+#all {
+	/*height: 90vh;*/
+}
+
+#boba-visual {
+	background-color: var(--bobabackground);
+	height:100vh;
+}
+
+#boba-canvas {
+	padding-top: 50px;
+}
+
+#boba-input {
+	padding-top: 50px;
+	padding-left: 30px;
+	padding-right: 10px;
+	background-color: white;
+	height: 100vh;
+}
+
+canvas {
+	padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    display: block;
+   /* position:absolute;
+    overflow: hidden;
+*/    /*width: 800px;*/
+}
+
+.btn {
+	color: var(--button);
+	border-color: var(--button);
+}
+
+.btn:hover {
+	background-color: var(--button);
+	border-color: var(--button);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active {
+	background-color: var(--buttonpress);
+}
+
+.btn:focus {
+  outline: none !important;
+}
+

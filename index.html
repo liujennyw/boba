@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Boba</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jcanvas.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <script type='text/javascript' src='boba.js'></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <!-- topping images, hidden -->
+    <div id="images" style="display: none;">
+    <img id='boba_image' src='img/boba.png'>
+    <img id='pudding_image' src='img/pudding.jpeg' width='50' height='50'>
+    <img id='lychee_image' src='img/lychee.png'>
+  </div>
+  <div class='page container-fluid'>
+    <div id='page-header' class='row'>
+      <div class='col-sm'>
+        Build A Boba
+      </div>
+    </div>
+    <div id='all' class='row align-items-center'>
+      <div id='boba-visual' class='col-sm'>
+        <canvas id="boba-canvas"></canvas>
+      </div>
+
+      <div id='boba-input' class='col-sm'>
+        <!-- tea size -->
+        <label for="tea-size">Tea Size</label>
+        <br>
+        <button type="label" id='0' class="btn btn-outline-primary size" onclick='teasize(0)'>Small</button>
+        <button type="label" id='1' class="btn btn-outline-primary size" onclick='teasize(1)'>Medium</button>
+        <button type="label" id='2' class="btn btn-outline-primary size" onclick='teasize(2)'>Large</button>
+      <!-- </div> -->
+
+      <br>
+      <br>
+        <!-- tea flavor -->
+        <label for="tea-flavor">Tea Flavor</label><br>
+        <button type="label" id='black' class="btn btn-outline-primary flavor" onclick='flavor("black")'>Black</button>
+        <button type="label" id='jasmine' class="btn btn-outline-primary flavor" onclick='flavor("jasmine")'>Jasmine</button>
+        <button type="label" id='taro' class="btn btn-outline-primary flavor" onclick='flavor("taro")'>Taro</button>
+        <button type="label" id='oolong' class="btn btn-outline-primary flavor" onclick='flavor("oolong")'>Oolong</button>
+        <button type="label" id='thai' class="btn btn-outline-primary flavor" onclick='flavor("thai")'>Thai</button>
+
+        <br>
+        <br>
+        <!-- toppings -->
+          <label for="topping_form">Toppings</label><br>
+          <button type="label" id='boba' class="btn btn-outline-primary topping" onclick='topping("boba")'>Boba</button>
+          <button type="label" id='pudding' class="btn btn-outline-primary topping" onclick='topping("pudding")'>Pudding</button>
+          <button type="label" id='lychee' class="btn btn-outline-primary topping" onclick='topping("lychee")'>Lychee Jelly</button>
+
+        <br>
+        <br>
+        <!-- ice -->
+          <label for="ice-level">Ice</label><br>
+          <button type="label" id='full-ice' class="btn btn-outline-primary ice" onclick='ice("full-ice")'>Full ice</button>
+          <button type="label" id='less-ice' class="btn btn-outline-primary ice" onclick='ice("less-ice")'>Less ice</button>
+          <button type="label" id='no-ice' class="btn btn-outline-primary ice" onclick='ice("no-ice")'>No ice</button>
+          <button type="label" id='hot' class="btn btn-outline-primary ice" onclick='ice("hot")'>Hot</button>
+
+        <br>
+        <br>
+        <!-- sugar -->
+        <label for="sugar-level">Sugar</label><br>
+        <button type="label" id='100-sugar' class="btn btn-outline-primary sugar" onclick='sugar("100-sugar")'>100%</button>
+        <button type="label" id='75-sugar' class="btn btn-outline-primary sugar" onclick='sugar("75-sugar")'>75%</button>
+        <button type="label" id='50-sugar' class="btn btn-outline-primary sugar" onclick='sugar("50-sugar")'>50%</button>
+        <button type="label" id='25-sugar' class="btn btn-outline-primary sugar" onclick='sugar("25-sugar")'>25%</button>
+        <button type="label" id='0-sugar' class="btn btn-outline-primary sugar" onclick='sugar("0-sugar")'>0%</button>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
