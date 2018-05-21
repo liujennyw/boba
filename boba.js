@@ -27,7 +27,7 @@ function draw_boba() {
     }
     resizeCanvas();
     var offset_width = (canvas.width - boba_top)/2;
-    var offset_height = 2*(canvas.height - boba_height)/3;
+    var offset_height = (canvas.height - boba_height)/2;
 
 	var ctx = canvas.getContext("2d");
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
