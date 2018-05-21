@@ -103,7 +103,7 @@ function draw_boba() {
 	ctx.lineTo(boba_top/2 + offset_width+.08*boba_top,offset_height-120);
 	ctx.stroke();
 
-	ctx.fillStyle = background;
+	// ctx.fillStyle = background;
 	ctx.beginPath();
 	ctx.ellipse(boba_top/2 + offset_width, offset_height-120, .08*boba_top, .15*boba_ellipse,0,0,2*Math.PI);
 	ctx.fill();
