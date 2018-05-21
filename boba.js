@@ -1,16 +1,19 @@
 var offset = 80;
-var boba_height = 350;
-var boba_top = 275;
-var boba_bottom = 190;
-var boba_ellipse = 50;
-var boba_color = '#ffffff';
+var boba_height = 300;
+var boba_top = 250;
+var boba_bottom = 175;
+var boba_ellipse = 45;
+var boba_color = '#EEFDB0';
 var boba_topping = 'empty';
-var background = '#ffdeda';
+var background = '#EEFDB0';
 
 // boba colors
 var boba_caps = ['#57e8e0','#ff748e','#ff7d26','#33ad5c','#8533ff'];
 var boba_cap = boba_caps[Math.floor(Math.random() * boba_caps.length)]
 var straw_color = boba_caps[Math.floor(Math.random() * boba_caps.length)]
+while (straw_color==boba_cap) {
+	straw_color = boba_caps[Math.floor(Math.random() * boba_caps.length)];
+};
 
 
 $(document).ready(function(){
@@ -33,15 +36,18 @@ function draw_boba() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 	// boba bottom
-	ctx.fillStyle = boba_color;
+		ctx.fillStyle = boba_color;
 	ctx.lineWidth = 4;
 	ctx.beginPath();
 	ctx.ellipse(boba_top/2 + offset_width, boba_height + offset_height, boba_bottom/2, boba_ellipse, 0, 0, 2*Math.PI);
 	ctx.closePath();
-	ctx.fill();
+	if (boba_color != background) {
+		ctx.fill();
+	}
 	ctx.stroke();
 
 	// boba cup color
+
 	ctx.fillStyle = boba_color;
 	ctx.beginPath();
 	ctx.moveTo(offset_width, offset_height);
@@ -49,7 +55,9 @@ function draw_boba() {
 	ctx.lineTo(boba_bottom + offset_width + (boba_top-boba_bottom)/2, boba_height + offset_height);
 	ctx.lineTo((boba_top-boba_bottom)/2 + offset_width, boba_height + offset_height);
 	ctx.closePath();
-	ctx.fill();
+	if (boba_color != background) {
+		ctx.fill();
+	}
 
 	// boba cup outline
 	ctx.beginPath();
@@ -104,15 +112,15 @@ function draw_boba() {
 	// eyes
 	ctx.fillStyle = 'black';
 	ctx.beginPath();
-	ctx.ellipse(offset_width + boba_top/3, .8*boba_height+offset_height, boba_height/35,boba_height/35,0,0,2*Math.PI);
-	ctx.ellipse(offset_width + 2*boba_top/3, .8*boba_height+offset_height, boba_height/35,boba_height/35,0,0,2*Math.PI);
+	ctx.ellipse(offset_width + boba_top/3, .4*boba_height+offset_height, boba_height/35,boba_height/35,0,0,2*Math.PI);
+	ctx.ellipse(offset_width + 2*boba_top/3, .4*boba_height+offset_height, boba_height/35,boba_height/35,0,0,2*Math.PI);
 	ctx.closePath();
 	ctx.fill();
 
 	// mouth
 	// ctx.lineWidth = 2;
 	ctx.beginPath();
-	ctx.ellipse(offset_width + boba_top/2, .85*boba_height+offset_height,boba_top/10,boba_top/20,0,0,Math.PI);
+	ctx.ellipse(offset_width + boba_top/2, .45*boba_height+offset_height,boba_top/15,boba_top/20,0,0,Math.PI);
 	ctx.stroke();
 
 	// draw topping
@@ -127,7 +135,7 @@ function draw_boba() {
 
 function teasize(size) {
 	// [height, top, bottom, ellipse,offset]
-	var sizes = {'0':[300,250,175,45,90], '1':[350,275,190,50,80], '2':[400,300,200,55,70]}
+	var sizes = {'0':[250,225,160,40,100], '1':[300,250,175,45,90], '2':[350,275,190,50,80]}
 
 	tea_buttons = document.getElementsByClassName('size');
 
